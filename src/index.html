@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta name="robots" content="noindex" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="../src/css/main.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Acme&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+      rel="stylesheet" />
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+  </head>
+
+  <body>
+    <!-- PAGINA WELCOME -->
+    <div class="container">
+      <div class="logo">
+        <img src="./img/logo-white.png" alt="" />
+      </div>
+
+      <div class="welcome-box">
+        <div class="welcome-text">
+          <h1>Benvenuto nel test di fine modulo! <br /></h1>
+        </div>
+        <div id="welcome-indications">
+          <h4>Indicazioni:</h4>
+          <ul>
+            <li>Rispondere correttamente ad almeno 2 domande su 3</li>
+            <li>10 secondi a disposizione per rispondere a ciascuna domanda</li>
+            <li>2 tentativi a disposizione per superare il test</li>
+            <li>Risultato disponibile alla fine del test</li>
+          </ul>
+        </div>
+        <button type="button" id="start" onclick="Start()">
+          INIZIA IL TEST
+        </button>
+      </div>
+    </div>
+
+    <!-- SECONDA PAGINA -->
+    <div class="main">
+      <!-- timer -->
+      <div class="box">
+        <div class="timerBox">Timer: <span></span></div>
+        <div id="outdated"></div>
+      </div>
+
+      <!-- domande desktop version -->
+      <div class="questionnaire-desktop">
+        <div class="question">
+          <h2 class="question_heading" id="question-num"></h2>
+          <div class="swiper mySwiper registration-slider">
+            <div class="question_answers swiper-wrapper">
+              <div class="answer swiper-slide" data-opt="0" onclick="onSelect(this)">
+                <!-- this, oggetto della funzione che stiamo eseguendo // il "this" è presente nel gestore eventi, e viene inviato alla funzione // in JS il parametro "option" ora si riferisce l'elemento HTML -->
+                <p class="answer-text-desktop"></p>
+              </div>
+              <div class="answer swiper-slide" data-opt="1" onclick="onSelect(this)">
+                <p class="answer-text-desktop"></p>
+              </div>
+              <div class="answer swiper-slide" data-opt="2" onclick="onSelect(this)">
+                <p class="answer-text-desktop"></p>
+              </div>
+              <div class="answer swiper-slide" data-opt="3" onclick="onSelect(this)">
+                <p class="answer-text-desktop"></p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+      </div>
+
+      <!-- domande mobile version-->
+      <div class="questionnaire-mobile">
+        <div class="question">
+          <h2 class="question_heading"></h2>
+          <div class="swiper mySwiper2 registration-slider">
+            <div class="question_answers swiper-wrapper">
+              <div class="answer swiper-slide" data-opt="0" onclick="onSelect(this)">
+                <p class="answer-text-mobile"></p>
+              </div>
+              <div class="answer swiper-slide" data-opt="1" onclick="onSelect(this)">
+                <p class="answer-text-mobile"></p>
+              </div>
+              <div class="answer swiper-slide" data-opt="2" onclick="onSelect(this)">
+                <p class="answer-text-mobile"></p>
+              </div>
+              <div class="answer swiper-slide" data-opt="3" onclick="onSelect(this)">
+                <p class="answer-text-mobile"></p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+      <!-- bottone next -->
+      <div class="actions">
+        <button type="button" class="next" id="next-btn" onclick="nextQuestion()">
+          DOMANDA SUCCESSIVA
+        </button>
+      </div>
+    </div>
+
+    <!-- PAGINA RISULTATO -->
+    <div class="result-page" id="result-page">
+      <h2>Risultato del test</h2>
+      <hr />
+      <p class="answered">
+        Domande: <strong><span></span></strong>
+      </p>
+      <p class="attempts">
+        Tentativi: <strong><span></span></strong>
+      </p>
+      <p class="right-answers">
+        Risposte corrette: <strong><span></span></strong>
+      </p>
+      <p class="wrong-answers">
+        Risposte errate: <strong><span></span></strong>
+      </p>
+      <p class="failed"></p>
+      <p class="succeed"></p>
+      <p class="percentage">Percentuale risposte corrette: <span></span>%</p>
+      <hr />
+      <button type="button" title="restart-btn" id="restart" onclick="Restart();">
+        RIPROVA
+      </button>
+      <p class="no-more-attempts"></p>
+    </div>
+
+    <!-- link Swiper -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <!-- link Gsap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.2/gsap.min.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
+
+</html>

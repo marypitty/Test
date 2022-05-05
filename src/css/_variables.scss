@@ -1,0 +1,38 @@
+
+$font-text: "Comic Neue", sans-serif;
+$background: linear-gradient(
+      115deg,
+      rgba(58, 58, 158, 0.8),
+      rgba(136, 136, 206, 0.7)
+    ),
+    url(https://cdn.freecodecamp.org/testable-projects-fcc/images/survey-form-background.jpeg);
+$colore-schede: rgb(88, 96, 150);
+$colore-box-schede: rgba(15,15,15,0.6);
+$black: #211f1e;
+$white: #f5f5fa;
+$red: crimson;
+$blue: #506ef9;
+$dark-blue: rgb(78, 78, 222);
+$grey:rgb(60, 59, 59);
+$light-red: rgba(236, 101, 101, 0.5);
+$light-green: rgba(76, 244, 93, 0.5);
+$box-shadow: inset 0 0 10px rgba($color: #000000, $alpha: 1,);
+
+$gradient-box: linear-gradient(217deg,
+  rgba(71, 62, 62, 0.8),
+  rgba(45, 44, 44, 0) 70.71%);
+
+//BREAKPOINTS
+$breakpoints: (xs: 1rem,
+  //16px
+  sm: 47rem,
+  //752px
+  md: 65rem,
+  //1040px
+  lg: 81rem,
+  //1296px
+  xl: 102rem,
+  //1632px
+  giga: 120rem,
+  //1920px
+);

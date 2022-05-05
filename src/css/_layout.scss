@@ -1,0 +1,449 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: $background;
+  height: 100vh;
+  width: 100vw;
+  font-family: $font-text;
+  color: $white;
+  box-sizing: inherit;
+  position: relative;
+  padding: 5vh 5vw 5vh 5vw;
+  @include breakpoint-down(md) {
+    padding: 0;
+  }
+}
+
+// PRIMA PAGINA WELCOME
+
+.container {
+  background: $colore-box-schede;
+  height: 90vh;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  padding: 3vh 10vw 3vh 10vw;
+  gap: 50px;
+  box-shadow: $box-shadow;
+  border-radius: 30px;
+  @include breakpoint-down(md) {
+    height: 100%;
+    display: block;
+    border-radius: 0;
+  }
+}
+
+.container.close {
+  display: none;
+}
+
+.welcome-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include breakpoint-down(sm) {
+    height: 50vh;
+    margin-top: 7vh;
+  }
+  h1 {
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 10px 0 60px;
+    @include breakpoint-down(md) {
+      font-size: 1.5rem;
+      margin: -27px 0 60px;
+    }
+  }
+}
+
+#welcome-indications ul {
+  list-style-type: square;
+  padding: 10px;
+  font-weight: 300;
+}
+
+#welcome-indications h4 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.logo {
+  margin: 20px;
+  @include breakpoint-down(md) {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+  img {
+    width: 100%;
+    @include breakpoint-down(md) {
+      width: 40%;
+    }
+    @include breakpoint-down(md) {
+      width: 60%;
+    }
+  }
+}
+
+#start {
+  width: 12rem;
+  display: inline-block;
+  text-align: center;
+  padding: 10px 0;
+  margin: 70px 0 40px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 100px;
+  background-color: $blue;
+  color: $white;
+  @include breakpoint-down(md) {
+    margin-top: 30px;
+  }
+}
+
+#start:hover {
+  background-color: $dark-blue;
+}
+
+// SECONDA PAGINA TEST
+
+.main {
+  background: $colore-box-schede;
+  height: 90vh;
+  display: none;
+  box-shadow: $box-shadow;
+  border-radius: 30px;
+  padding: 2vh 2vw 2vh 2vw;
+  @include breakpoint-down(md) {
+    padding: 0;
+    height: 100vh;
+    border-radius: 0;
+  }
+  h2 {
+    @include breakpoint-down(lg) {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+  }
+}
+
+.main.open {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+#next-btn {
+  display: none;
+  width: 12rem;
+  text-align: center;
+  padding: 10px 0;
+  margin: 40px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 100px;
+  background-color: $blue;
+  color: $white;
+  @include breakpoint-down(md) {
+    padding: 10px 13px;
+    margin: 0 40px 34px;
+  }
+}
+
+#next-btn:hover {
+  background-color: $dark-blue;
+}
+
+#next-btn.open {
+  display: block;
+}
+
+// Timer
+.box {
+  padding: 20px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  @include breakpoint-down(md) {
+    display: block;
+    text-align: center;
+  }
+}
+
+.timerBox {
+  font-size: 1.5rem;
+  @include breakpoint-down(md) {
+    margin-top: 20px;
+  }
+}
+
+.timerBox span {
+  animation: pulse 1s 1s ease-in-out infinite;
+  opacity: 0;
+}
+
+#outdated {
+  color: $red;
+  margin-left: 20px;
+  font-size: 1.5rem;
+  @include breakpoint-down(md) {
+    font-size: 1.5rem;
+    margin-left: 0;
+  }
+}
+
+// box domande
+
+.questionnaire-desktop {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  margin: auto;
+  @include breakpoint-down(md) {
+    display: none;
+  }
+}
+
+.questionnaire-mobile {
+  display: none;
+  flex-direction: column;
+  width: 75%;
+  @include breakpoint-down(md) {
+    display: flex;
+  }
+}
+
+.question {
+  display: grid;
+  grid-row-gap: 20px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.question_heading {
+  font-size: 27px;
+  justify-self: center;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.answer {
+  background-color: $colore-schede;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: $box-shadow;
+  height: 250px;
+  cursor: pointer;
+  border-radius: 15px;
+  transition: all 0.3s;
+  @include breakpoint-down(md) {
+    height: 28vh;
+  }
+}
+
+.answer p {
+  font-size: x-large;
+  font-weight: bold;
+  text-align: center;
+  padding: 5px;
+}
+
+.right {
+  background-color: $light-green;
+  animation: pulse 0.5s 0.1s ease-in;
+  opacity: 1;
+}
+
+.wrong {
+  background-color: $light-red;
+  animation: pulse 0.5s 0.1s ease-in;
+  opacity: 1;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+// TERZA PAGINA RISULTATO
+
+.result-page {
+  display: none;
+}
+
+.result-page.open {
+  background: $colore-box-schede;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  box-shadow: $box-shadow;
+  border-radius: 30px;
+  padding: 2vh 2vw 2vh 2vw;
+  font-size: 2rem;
+  line-height: 2.5rem;
+  @include breakpoint-down(md) {
+    padding: 3vh 10vw 3vh 10vw;
+    font-size: 1.5rem;
+    line-height: 3rem;
+    height: 100vh;
+    border-radius: 0;
+  }
+}
+
+.result-page h2 {
+  margin-bottom: 35px;
+  @include breakpoint-down(md) {
+    margin: 1.5rem 0 2rem 0;
+  }
+}
+
+#restart {
+  width: 12rem;
+  display: inline-block;
+  text-align: center;
+  padding: 10px 0;
+  margin: 20px 0 0 0;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 100px;
+  background-color: $blue;
+  color: $white;
+}
+
+#restart:hover {
+  background-color: $dark-blue;
+}
+
+hr {
+  margin: 10px;
+  color: $black;
+  width: 35rem;
+  @include breakpoint-down(md) {
+    width: 8rem;
+  }
+}
+
+.failed {
+  color: $red;
+  margin: 20px;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 1.5rem;
+  @include breakpoint-down(md) {
+    font-size: 1.3rem;
+    text-align: center;
+    font-weight: bold;
+    line-height: initial;
+  }
+}
+
+.succeed {
+  color: green;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 1.5rem;
+  @include breakpoint-down(md) {
+    font-size: 1.3rem;
+    text-align: center;
+    font-weight: bold;
+    line-height: initial;
+  }
+}
+
+.no-more-attempts {
+  text-transform: uppercase;
+  font-size: small;
+  font-weight: 600;
+  color: $blue;
+  animation: slide-down 0.5s 1.8s forwards, clear 0.8s 0.4s forwards;
+  transform: translateY(10rem);
+  opacity: 0;
+  @include breakpoint-down(md) {
+    font-size: x-small;
+  }
+}
+
+.percentage {
+  font-size: 20px;
+  @include breakpoint-down(sm) {
+    font-size: 15px;
+  }
+}
+
+/* SWIPER */
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-button-next {
+  right: 12vw;
+
+  @include breakpoint-down(md) {
+    display: none;
+  }
+}
+
+.swiper-button-prev {
+  left: 12vw;
+  @include breakpoint-down(md) {
+    display: none;
+  }
+}
+
+.swiper-pagination {
+  position: relative;
+}
+
+/* KEYFRAMES */
+
+@keyframes clear {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes slide-down {
+  from {
+    transform: translateY(-2rem);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+    transform: none;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
